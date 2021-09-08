@@ -2,6 +2,7 @@ document.querySelector('.busca').addEventListener('submit', async ()=> {
   event.preventDefault();
 
   let input = document.querySelector('#searchInput').value
+  
 
   if(input !== '') {
     clearInfo();
@@ -42,7 +43,9 @@ function showInfo(json) {
 
   document.querySelector('.ventoPonto').style.transform = `rotate(${json.windAngle-90}deg)`
 
-  document.querySelector('.resultado').style.display = 'block' 
+  document.querySelector('.resultado').style.display = 'block'
+
+  document.querySelector('.app').style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${json.name}')`
 }
 
 function showWarning(message) {
@@ -53,3 +56,4 @@ function clearInfo() {
   showWarning('');
   document.querySelector('.resultado').style.display = 'none'
 }
+
